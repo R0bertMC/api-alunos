@@ -38,6 +38,8 @@ Lista de todos os Alunos cadastrados
 GET /alunos
 ```
 
+Cadastro de um Novo aluno
+
 ```bash
 POST /alunos
 ```
