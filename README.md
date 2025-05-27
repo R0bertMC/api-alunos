@@ -14,7 +14,7 @@ Clone este repositório e instale as dependências:
 
 ```bash
 git clone https://github.com/R0bertMC/api-alunos
-cd api-simples
+cd api-alunos
 npm install
 ```
 
