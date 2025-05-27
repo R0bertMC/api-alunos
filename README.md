@@ -13,7 +13,7 @@ Este projeto é uma API REST simples desenvolvida como parte de uma atividade so
 Clone este repositório e instale as dependências:
 
 ```bash
-git clone https://github.com/R0bertMC/api-simples
+git clone https://github.com/R0bertMC/api-alunos
 cd api-simples
 npm install
 ```
