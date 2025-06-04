@@ -48,4 +48,4 @@ POST /alunos
 
 ---
 
-Desenvolvido por [R0bertMC](https://github.com/R0bertMC) e [DevMarinh0](https://github.com/DevMarinh0)
+Desenvolvido por [R0bertMC](https://github.com/R0bertMC)
