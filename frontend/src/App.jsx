@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './App.css'; // Estilos básicos
+
 function App() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -7,6 +8,7 @@ function App() {
   const [alunos, setAlunos] = useState([]);
   const [mensagem, setMensagem] = useState({ texto: '', tipo: '' });
   const API_URL = 'http://localhost:3000/alunos';
+
   const fetchAlunos = useCallback(async () => {
     try {
       const response = await fetch(API_URL);
@@ -22,6 +24,7 @@ function App() {
   useEffect(() => {
     fetchAlunos();
   }, [fetchAlunos]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMensagem({ texto: '', tipo: '' });
@@ -48,6 +51,7 @@ function App() {
       console.error(err);
     }
   };
+
   const handleDelete = async (alunoId, alunoNome) => {
     if (!window.confirm(`Tem certeza que deseja remover o aluno "${alunoNome}"?`)) return;
     setMensagem({ texto: '', tipo: '' });
@@ -64,12 +68,11 @@ function App() {
       console.error(err);
     }
   };
+
   return (
     <div className="container">
-
       <h1>Cadastro de Alunos</h1>
-      {mensagem.texto && <div className={`mensagem
-${mensagem.tipo}`}>{mensagem.texto}</div>}
+      {mensagem.texto && <div className={`mensagem ${mensagem.tipo}`}>{mensagem.texto}</div>}
       <form onSubmit={handleSubmit} className="aluno-form">
         <h2>Adicionar Novo Aluno</h2>
         <div>
@@ -99,10 +102,12 @@ ${mensagem.tipo}`}>{mensagem.texto}</div>}
               <li key={aluno.id}>
                 <div>
                   <strong>{aluno.nome}</strong> ({aluno.email})<br />
-                  <em>{aluno.curso || 'Curso não informado'}</em>
+                  <span style={{ color: "#4fc3f7" }}>
+                    {aluno.curso ? aluno.curso : 'Curso não informado'}
+                  </span>
                 </div>
                 <button onClick={() => handleDelete(aluno.id, aluno.nome)}
-                  className="botao-deletar">Remover</button>
+                  className="botao-deletar">Remover aluno</button>
               </li>
             ))}
           </ul>
@@ -111,4 +116,5 @@ ${mensagem.tipo}`}>{mensagem.texto}</div>}
     </div>
   );
 }
+
 export default App;

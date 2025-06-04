@@ -1,42 +1,133 @@
+body {
+  background: #10172b;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 40px auto;
   padding: 2rem;
+  background: #182447;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  color: #4fc3f7;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.aluno-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: #223366;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.12);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.aluno-form label {
+  font-weight: 500;
+  color: #b3cfff;
+  margin-bottom: 0.3rem;
+  text-align: left;
 }
 
-.card {
-  padding: 2em;
+.aluno-form input {
+  padding: 0.6rem;
+  border: 1px solid #4fc3f7;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  background: #162040;
+  color: #e3f2fd;
 }
 
-.read-the-docs {
-  color: #888;
+.aluno-form input:focus {
+  border: 1.5px solid #2979ff;
+  background: #1a274a;
+}
+
+button[type="submit"], .botao-deletar {
+  background: linear-gradient(90deg, #2979ff 60%, #00bcd4 100%);
+  color: #fff;
+  border: none;
+  padding: 0.7em 1.5em;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 8px rgba(41,121,255,0.10);
+}
+
+button[type="submit"]:hover, .botao-deletar:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #0097a7 100%);
+}
+
+.lista-alunos {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.lista-alunos h2 {
+  color: #4fc3f7;
+  margin-bottom: 1rem;
+}
+
+.lista-alunos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-alunos li {
+  background: #162040;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.10);
+}
+
+.lista-alunos li div {
+  flex: 1;
+  color: #b3cfff;
+}
+
+.botao-deletar {
+  background: linear-gradient(90deg, #ff1744 60%, #2979ff 100%);
+  margin-left: 1rem;
+  padding: 0.5em 1em;
+}
+
+.botao-deletar:hover {
+  background: linear-gradient(90deg, #d50000 60%, #1565c0 100%);
+}
+
+.mensagem {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.mensagem.sucesso {
+  background: #1de9b6;
+  color: #003c5e;
+  border: 1px solid #00bfae;
+}
+
+.mensagem.erro {
+  background: #ff1744;
+  color: #fff;
+  border: 1px solid #d50000;
 }
