@@ -21,7 +21,9 @@ npm install
 ## Execução da API
 
 ```bash
-node index.js
+cd backend
+npm install
+node app.js
 ```
 
 ## Rotas da API
